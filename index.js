@@ -20,7 +20,7 @@ SteamRepAPI.prototype.IsTagged = function(steamID, tag, callback) {
 
     request(options, function(error, response, body) {
         if(!error && response.statusCode == 200) {
-            if(body.indexOf(tag) > -1) {
+            if(body.toLowerCase().indexOf(tag.toLowerCase()) > -1) {
                 callback(null, true);
             } else {
                 callback(null, false);
