@@ -10,5 +10,13 @@
     "name": "Michael Scholtz",
     "email": "michael.scholtz@outlook.com"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.57.0",
+    "steamid": "^0.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scholtzm/vapor-steamrep.git"
+  }
 }
