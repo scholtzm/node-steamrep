@@ -21,9 +21,8 @@ and available as `Vapor.extension.SteamRepAPI`.
 
 ### Installation
 
-1. Go to plugins folder in Vapor.
-2. Run `git clone https://github.com/scholtzm/vapor-steamrep.git`.
-3. Install dependencies `cd vapor-steamrep && npm install`.
+1. Go to your Vapor folder.
+2. Run `npm install git+https://github.com/scholtzm/vapor-steamrep.git`.
 
 ### License
 
