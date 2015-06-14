@@ -31,8 +31,8 @@ SteamRepAPI.prototype.IsTagged = function(steamID, tag, callback) {
     });
 };
 
-module.exports = function(Vapor) {
+module.exports = function(VaporAPI) {
 
-    Vapor.api.SteamRepAPI = new SteamRepAPI();
+    VaporAPI.SteamRepAPI = new SteamRepAPI();
 
 };
