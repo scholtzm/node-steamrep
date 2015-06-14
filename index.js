@@ -33,6 +33,6 @@ SteamRepAPI.prototype.IsTagged = function(steamID, tag, callback) {
 
 module.exports = function(Vapor) {
 
-    Vapor.extension.SteamRepAPI = new SteamRepAPI();
+    Vapor.api.SteamRepAPI = new SteamRepAPI();
 
 };
