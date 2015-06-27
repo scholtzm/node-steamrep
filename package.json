@@ -1,22 +1,32 @@
 {
-  "name": "vapor-steamrep",
-  "version": "1.0.0",
-  "description": "Vapor plugin for easy SteamRep checks.",
+  "name": "steamrep",
+  "version": "0.0.1",
+  "description": "SteamRep API Wrapper for node.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/mocha/bin/mocha"
   },
   "author": {
     "name": "Michael Scholtz",
     "email": "michael.scholtz@outlook.com"
   },
   "license": "MIT",
+  "keywords": [
+    "steam",
+    "steamid",
+    "steamrep",
+    "reputation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scholtzm/node-steamrep.git"
+  },
   "dependencies": {
     "request": "^2.57.0",
     "steamid": "^0.2.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/scholtzm/vapor-steamrep.git"
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5"
   }
 }

@@ -1,28 +1,42 @@
-# Vapor SteamRep Plugin
+# SteamRep API Wrapper for node.js
 
-[Vapor](https://github.com/scholtzm/vapor) plugin for easy SteamRep checks.
-
-### Features
-
-- Wrapper for the super simple SteamRep API.
-
-### Methods
-
-After being loaded by Vapor, this plugin will be injected into `Vapor.extension`
-and available as `Vapor.extension.SteamRepAPI`.
-
-##### SteamRepAPI.IsTagged(steamID, tag, callback)
-
-- `steamID` - user's SteamID64 as string.
-- `tag` - should be either "SCAMMER" or "CAUTION".
-- `callback` - should be `function(error, result)`
-	- `error` comes from the HTTP request
-	- `result` is either `true` or `false` 
+Very thin wrapper for the API provided by [SteamRep.com](http://steamrep.com).
 
 ### Installation
 
-1. Go to your Vapor folder.
-2. Run `npm install git+https://github.com/scholtzm/vapor-steamrep.git`.
+`npm install steamrep`
+
+### Usage
+
+```js
+var SteamRepAPI = require('steamrep');
+
+// All methods are "static"
+SteamRepAPI.IsScammer("76561197960435530", function(error, result) {
+	if(error) {
+		console.log(error);
+	} else {
+		if(result) {
+			console.log("This user is tagged as 'SCAMMER' at SteamRep.");
+		} else {
+			console.log("This user is not tagged as 'SCAMMER' at SteamRep.");
+		}
+	}
+});
+```
+
+### Methods
+
+##### SteamRepAPI.IsScammer(steamID, callback)
+
+- `steamID` - user's SteamID64 as string.
+- `callback` - should be `function(error, result)`
+	- `error` comes from the HTTP request
+	- `result` is either `true` or `false`
+
+### Tests
+
+`npm test`
 
 ### License
 
