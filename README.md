@@ -23,6 +23,10 @@ SteamRepAPI.IsScammer("76561197960435530", function(error, result) {
 		}
 	}
 });
+
+SteamRepAPI.GetProfile("76561197960435530", function(error, result) {
+    console.log(result);
+});
 ```
 
 ### Methods
@@ -33,6 +37,14 @@ SteamRepAPI.IsScammer("76561197960435530", function(error, result) {
 - `callback` - should be `function(error, result)`
 	- `error` comes from the HTTP request
 	- `result` is either `true` or `false`
+
+##### SteamRepAPI.GetProfile(steamID, callback)
+
+- `steamID` - user's SteamID64 as string.
+- `callback` - should be `function(error, result)`
+	- `error` comes from the HTTP request
+	- `result` is object returned by the API
+- (NOTE: Dump the `result` into console to see what info it includes.)
 
 ### Tests
 
