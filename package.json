@@ -1,6 +1,6 @@
 {
   "name": "steamrep",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "SteamRep API Wrapper for node.js",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "request": "^2.57.0",
-    "steamid": "^0.2.1"
+    "steamid": "^0.3.0"
   },
   "devDependencies": {
     "chai": "^3.0.0",

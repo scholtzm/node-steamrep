@@ -1,5 +1,8 @@
 # SteamRep API Wrapper for node.js
 
+[![NPM version](http://img.shields.io/npm/v/steamrep.svg?style=flat)](https://www.npmjs.org/package/steamrep)
+[![Dependency Status](https://david-dm.org/scholtzm/node-steamrep.svg)](https://david-dm.org/scholtzm/node-steamrep)
+
 Very thin wrapper for the API provided by [SteamRep.com](http://steamrep.com).
 
 ### Installation
