@@ -14,8 +14,8 @@ var isScammerTrue = nock("http://steamrep.com")
 
 describe('SteamRepAPI Wrapper', function () {
 
-    it('IsScammer returns false for clean profile', function(done) {
-        SteamRepAPI.IsScammer("76561197960435530", function(error, result) {
+    it('isScammer returns false for clean profile', function(done) {
+        SteamRepAPI.isScammer("76561197960435530", function(error, result) {
             expect(error).to.be.null;
             expect(result).to.be.false;
 
@@ -23,8 +23,8 @@ describe('SteamRepAPI Wrapper', function () {
         });
     });
 
-    it('IsScammer returns true for banned profile', function(done) {
-        SteamRepAPI.IsScammer("76561198002317976", function(error, result) {
+    it('isScammer returns true for banned profile', function(done) {
+        SteamRepAPI.isScammer("76561198002317976", function(error, result) {
             expect(error).to.be.null;
             expect(result).to.be.true;
 

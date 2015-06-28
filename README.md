@@ -15,7 +15,7 @@ Very thin wrapper for the API provided by [SteamRep.com](http://steamrep.com).
 var SteamRepAPI = require('steamrep');
 
 // All methods are "static"
-SteamRepAPI.IsScammer("76561197960435530", function(error, result) {
+SteamRepAPI.isScammer("76561197960435530", function(error, result) {
 	if(error) {
 		console.log(error);
 	} else {
@@ -27,21 +27,23 @@ SteamRepAPI.IsScammer("76561197960435530", function(error, result) {
 	}
 });
 
-SteamRepAPI.GetProfile("76561197960435530", function(error, result) {
-    console.log(result);
+SteamRepAPI.getProfile("76561197960435530", function(error, result) {
+	if(error === null) {
+    	console.log(result);
+	}
 });
 ```
 
 ### Methods
 
-##### SteamRepAPI.IsScammer(steamID, callback)
+##### SteamRepAPI.isScammer(steamID, callback)
 
 - `steamID` - user's SteamID64 as string.
 - `callback` - should be `function(error, result)`
 	- `error` comes from the HTTP request
 	- `result` is either `true` or `false`
 
-##### SteamRepAPI.GetProfile(steamID, callback)
+##### SteamRepAPI.getProfile(steamID, callback)
 
 - `steamID` - user's SteamID64 as string.
 - `callback` - should be `function(error, result)`

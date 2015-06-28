@@ -14,7 +14,7 @@ var SteamRepAPI = {
  * @param {string}   steamID  User's SteamID64 as string.
  * @param {function} callback Callback function.
  */
-SteamRepAPI.IsScammer = function(steamID, callback) {
+SteamRepAPI.isScammer = function(steamID, callback) {
     if(typeof(callback) !== 'function')
         throw new Error('Callback is not a function.');
 
@@ -45,7 +45,7 @@ SteamRepAPI.IsScammer = function(steamID, callback) {
  * @param {string}   steamID  User's SteamID64 as string.
  * @param {function} callback Callback function.
  */
-SteamRepAPI.GetProfile = function(steamID, callback) {
+SteamRepAPI.getProfile = function(steamID, callback) {
     var finalUrl = this._PROFILE_URL + steamID + "?json=1&extended=1";
 
     var options = {
