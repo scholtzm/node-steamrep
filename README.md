@@ -22,7 +22,7 @@ SteamRepAPI.isScammer("76561197960435530", function(error, result) {
 		if(result) {
 			console.log("This user is tagged as 'SCAMMER' at SteamRep.");
 		} else {
-			console.log("This user is not tagged as 'SCAMMER' at SteamRep.");
+			console.log("This user is NOT tagged as 'SCAMMER' at SteamRep.");
 		}
 	}
 });
@@ -36,16 +36,16 @@ SteamRepAPI.getProfile("76561197960435530", function(error, result) {
 
 ### Methods
 
-##### SteamRepAPI.isScammer(steamID, callback)
+##### isScammer(steamID, callback)
 
-- `steamID` - user's SteamID64 as string.
+- `steamID` - user's SteamID64 as string
 - `callback` - should be `function(error, result)`
 	- `error` comes from the HTTP request
 	- `result` is either `true` or `false`
 
-##### SteamRepAPI.getProfile(steamID, callback)
+##### getProfile(steamID, callback)
 
-- `steamID` - user's SteamID64 as string.
+- `steamID` - user's SteamID64 as string
 - `callback` - should be `function(error, result)`
 	- `error` comes from the HTTP request
 	- `result` is object returned by the API
