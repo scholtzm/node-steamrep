@@ -1,6 +1,6 @@
 {
   "name": "steamrep",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "SteamRep API Wrapper for node.js",
   "main": "index.js",
   "scripts": {
