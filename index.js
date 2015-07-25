@@ -15,9 +15,6 @@ var SteamRepAPI = {
  * @param {function} callback Callback function.
  */
 SteamRepAPI.isScammer = function(steamID, callback) {
-    if(typeof(callback) !== 'function')
-        throw new Error('Callback is not a function.');
-
     var steamID32 = new SteamID(steamID);
     var finalUrl = this._API_URL + steamID32.getSteam2RenderedID();
 
@@ -28,7 +25,7 @@ SteamRepAPI.isScammer = function(steamID, callback) {
     };
 
     request(options, function(error, response, body) {
-        if(!error && response.statusCode == 200) {
+        if(!error && response.statusCode === 200) {
             if(body.toLowerCase().indexOf("scammer") > -1) {
                 callback(null, true);
             } else {
@@ -56,7 +53,7 @@ SteamRepAPI.getProfile = function(steamID, callback) {
     };
 
     request(options, function(error, response, body) {
-        if(!error && response.statusCode == 200) {
+        if(!error && response.statusCode === 200) {
             callback(null, body);
         } else {
             callback(error, null);
