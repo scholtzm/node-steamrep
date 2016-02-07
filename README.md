@@ -34,6 +34,12 @@ SteamRepAPI.getProfile("76561197960435530", function(error, result) {
 });
 ```
 
+### Properties
+
+##### timeout
+
+Timeout value used for HTTP requests. Defaults to 10000ms (10 seconds).
+
 ### Methods
 
 ##### isScammer(steamID, callback)

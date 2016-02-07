@@ -1,12 +1,14 @@
+var util = require('util');
 var request = require('request');
 var SteamID = require('steamid');
 
-var timeout = 10000; // 10s, hardcoded for now
-
 // Main API object
 var SteamRepAPI = {
-  _API_URL: 'http://steamrep.com/id2rep.php?steamID32=',
-  _PROFILE_URL: 'http://steamrep.com/api/beta4/reputation/'
+  _API_URL: 'http://steamrep.com/id2rep.php',
+  _PROFILE_URL: 'http://steamrep.com/api/beta3/reputation/%s',
+
+  // default timeout value
+  timeout: 10000
 };
 
 /**
@@ -16,12 +18,14 @@ var SteamRepAPI = {
  */
 SteamRepAPI.isScammer = function(steamID, callback) {
   var steamID32 = new SteamID(steamID);
-  var finalUrl = this._API_URL + steamID32.getSteam2RenderedID();
 
   var options = {
-    url: finalUrl,
+    url: this._API_URL,
     method: 'GET',
-    timeout: timeout
+    timeout: this.timeout,
+    qs: {
+      steamID32: steamID32.getSteam2RenderedID()
+    }
   };
 
   request(options, function(error, response, body) {
@@ -43,13 +47,17 @@ SteamRepAPI.isScammer = function(steamID, callback) {
  * @param {function} callback Callback function.
  */
 SteamRepAPI.getProfile = function(steamID, callback) {
-  var finalUrl = this._PROFILE_URL + steamID + '?json=1&extended=1';
+  var finalUrl = util.format(this._PROFILE_URL, steamID);
 
   var options = {
     url: finalUrl,
     method: 'GET',
-    timeout: timeout,
-    json: true
+    timeout: this.timeout,
+    json: true,
+    qs: {
+      json: 1,
+      extended: 1
+    }
   };
 
   request(options, function(error, response, body) {
