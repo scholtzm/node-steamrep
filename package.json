@@ -3,10 +3,6 @@
   "version": "0.0.7",
   "description": "SteamRep API Wrapper for node.js",
   "main": "index.js",
-  "scripts": {
-    "prepublish": "npm test",
-    "test": "node_modules/mocha/bin/mocha"
-  },
   "author": {
     "name": "Michael Scholtz",
     "email": "michael.scholtz@outlook.com"
@@ -22,12 +18,18 @@
     "type": "git",
     "url": "https://github.com/scholtzm/node-steamrep.git"
   },
+  "scripts": {
+    "lint": "eslint .",
+    "lintfix": "eslint . --fix",
+    "test": "mocha"
+  },
   "dependencies": {
     "request": "^2.60.0",
     "steamid": "^0.3.1"
   },
   "devDependencies": {
     "chai": "^3.2.0",
+    "eslint": "^1.10.3",
     "mocha": "^2.2.5",
     "nock": "^2.9.1"
   }

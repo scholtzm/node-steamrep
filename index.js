@@ -5,8 +5,8 @@ var timeout = 10000; // 10s, hardcoded for now
 
 // Main API object
 var SteamRepAPI = {
-    _API_URL: "http://steamrep.com/id2rep.php?steamID32=",
-    _PROFILE_URL: "http://steamrep.com/api/beta3/reputation/"
+  _API_URL: 'http://steamrep.com/id2rep.php?steamID32=',
+  _PROFILE_URL: 'http://steamrep.com/api/beta4/reputation/'
 };
 
 /**
@@ -15,26 +15,26 @@ var SteamRepAPI = {
  * @param {function} callback Callback function.
  */
 SteamRepAPI.isScammer = function(steamID, callback) {
-    var steamID32 = new SteamID(steamID);
-    var finalUrl = this._API_URL + steamID32.getSteam2RenderedID();
+  var steamID32 = new SteamID(steamID);
+  var finalUrl = this._API_URL + steamID32.getSteam2RenderedID();
 
-    var options = {
-        url: finalUrl,
-        method: "GET",
-        timeout: timeout
-    };
+  var options = {
+    url: finalUrl,
+    method: 'GET',
+    timeout: timeout
+  };
 
-    request(options, function(error, response, body) {
-        if(!error && response.statusCode === 200) {
-            if(body.toLowerCase().indexOf("scammer") > -1) {
-                callback(null, true);
-            } else {
-                callback(null, false);
-            }
-        } else {
-            callback(error, null);
-        }
-    });
+  request(options, function(error, response, body) {
+    if(!error && response.statusCode === 200) {
+      if(body.toLowerCase().indexOf('scammer') > -1) {
+        callback(null, true);
+      } else {
+        callback(null, false);
+      }
+    } else {
+      callback(error, null);
+    }
+  });
 };
 
 /**
@@ -43,22 +43,22 @@ SteamRepAPI.isScammer = function(steamID, callback) {
  * @param {function} callback Callback function.
  */
 SteamRepAPI.getProfile = function(steamID, callback) {
-    var finalUrl = this._PROFILE_URL + steamID + "?json=1&extended=1";
+  var finalUrl = this._PROFILE_URL + steamID + '?json=1&extended=1';
 
-    var options = {
-        url: finalUrl,
-        method: "GET",
-        timeout: timeout,
-        json: true
-    };
+  var options = {
+    url: finalUrl,
+    method: 'GET',
+    timeout: timeout,
+    json: true
+  };
 
-    request(options, function(error, response, body) {
-        if(!error && response.statusCode === 200) {
-            callback(null, body);
-        } else {
-            callback(error, null);
-        }
-    });
+  request(options, function(error, response, body) {
+    if(!error && response.statusCode === 200) {
+      callback(null, body);
+    } else {
+      callback(error, null);
+    }
+  });
 };
 
 // Export API object
