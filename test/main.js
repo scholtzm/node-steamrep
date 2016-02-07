@@ -17,7 +17,7 @@ nock('http://steamrep.com')
   .reply(200, '_&IS A SCAMMER,SR SCAMMER,SKIAL SCAMMER,FoG SCAMMER,REDDIT SCAMMER &STEAM_0:0:21026124');
 
 nock('http://steamrep.com')
-  .get('/api/beta3/reputation/76561197960435530')
+  .get('/api/beta4/reputation/76561197960435530')
   .query({
     json: 1,
     extended: 1

@@ -5,7 +5,7 @@ var SteamID = require('steamid');
 // Main API object
 var SteamRepAPI = {
   _API_URL: 'http://steamrep.com/id2rep.php',
-  _PROFILE_URL: 'http://steamrep.com/api/beta3/reputation/%s',
+  _PROFILE_URL: 'http://steamrep.com/api/beta4/reputation/%s',
 
   // default timeout value
   timeout: 10000
