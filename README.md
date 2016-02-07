@@ -15,23 +15,26 @@ Very thin wrapper for the API provided by [SteamRep.com](http://steamrep.com).
 ```js
 var SteamRepAPI = require('steamrep');
 
+// You can change the timeout value if you wish
+SteamRepAPI.timeout = 5000;
+
 // All methods are "static"
 SteamRepAPI.isScammer("76561197960435530", function(error, result) {
-	if(error) {
-		console.log(error);
-	} else {
-		if(result) {
-			console.log("This user is tagged as 'SCAMMER' at SteamRep.");
-		} else {
-			console.log("This user is NOT tagged as 'SCAMMER' at SteamRep.");
-		}
-	}
+  if(error) {
+    console.log(error);
+  } else {
+    if(result) {
+      console.log("This user is tagged as 'SCAMMER' at SteamRep.");
+    } else {
+      console.log("This user is NOT tagged as 'SCAMMER' at SteamRep.");
+    }
+  }
 });
 
 SteamRepAPI.getProfile("76561197960435530", function(error, result) {
-	if(error === null) {
-    	console.log(result);
-	}
+  if(error === null) {
+    console.log(result);
+  }
 });
 ```
 
