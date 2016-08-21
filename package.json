@@ -24,13 +24,13 @@
     "test": "mocha"
   },
   "dependencies": {
-    "request": "^2.69.0",
-    "steamid": "^0.3.1"
+    "request": "^2.74.0",
+    "steamid": "^1.1.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "eslint": "^1.10.3",
-    "mocha": "^2.4.5",
-    "nock": "^7.0.2"
+    "eslint": "^3.3.1",
+    "mocha": "^3.0.2",
+    "nock": "^8.0.0"
   }
 }
